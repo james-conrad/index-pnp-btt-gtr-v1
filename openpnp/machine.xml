@@ -328,8 +328,38 @@
             </pipeline>
          </feeder>
       </feeders>
-      <cameras/>
-      <actuators/>
+      <cameras>
+         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM16ccd01b0d616a94" name="Bottom" looking="Down" auto-visible="false" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="false" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="false" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" red-balance="1.0" green-balance="1.0" blue-balance="1.0" red-gamma="1.0" green-gamma="1.0" blue-gamma="1.0" deinterlace="false" light-actuator-id="ACT16ccd078c85dd09f" allow-machine-actuators="false" focus-sensing-method="None" white-balance-lead-fractile="0.8" white-balance-clip-fractile="0.99" white-balance-gamma-fractile="0.5" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#7&amp;720253d&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+            <units-per-pixel units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
+            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <calibration enabled="false">
+               <camera-matrix length="9">1.6911810772976497E-306, 9.346097902483547E-307, 6.230376566125661E-307, 9.457412703577523E-308, 1.2461092651059716E-306, 5.34E-322, 0.0, 0.0, 0.0</camera-matrix>
+               <distortion-coefficients length="5">0.0, 0.0, 0.0, 0.0, 0.0</distortion-coefficients>
+            </calibration>
+            <focus-provider class="org.openpnp.machine.reference.camera.AutoFocusProvider" averaged-frames="1" focus-speed="0.5" show-diagnostics="true">
+               <focal-resolution value="0.05" units="Millimeters"/>
+            </focus-provider>
+            <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
+            <brightness property="Brightness" value="0" auto="false"/>
+            <contrast property="Contrast" value="32" auto="false"/>
+            <exposure property="Exposure" value="-8" auto="false"/>
+            <focus property="Focus"/>
+            <gain property="Gain" value="0" auto="false"/>
+            <gamma property="Gamma" value="72" auto="false"/>
+            <hue property="Hue" value="0" auto="false"/>
+            <power-line-frequency property="PowerLineFrequency" value="1" auto="false"/>
+            <saturation property="Saturation" value="60" auto="false"/>
+            <sharpness property="Sharpness" value="2" auto="false"/>
+            <white-balance property="WhiteBalance" value="4600" auto="true"/>
+            <zoom property="Zoom"/>
+         </camera>
+      </cameras>
+      <actuators>
+         <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="ACT16ccd078c85dd09f" name="BottomLight" value-type="Boolean" value-type-confirmed="false" default-on-double="0.0" default-on-string="" default-off-double="0.0" default-off-string="" interlock-actuator="false" driver-id="DRV16cc74c729507d80" coordinated-before-actuate="true" coordinated-after-actuate="false" coordinated-before-read="true" enabled-actuation="AssumeUnknown" homed-actuation="LeaveAsIs" disabled-actuation="LeaveAsIs" index="0">
+            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+         </actuator>
+      </actuators>
       <part-alignments>
          <part-alignment class="org.openpnp.machine.reference.vision.ReferenceBottomVision" enabled="true" pre-rotate="false" max-vision-passes="3" max-angular-offset="10.0" test-alignment-angle="0.0">
             <pipeline>
@@ -360,7 +390,7 @@
          </part-alignment>
       </part-alignments>
       <drivers>
-         <driver class="org.openpnp.machine.reference.driver.GcodeAsyncDriver" id="DRV16cc74c729507d80" name="GcodeAsyncDriver" motion-control-type="ConstantAcceleration" communications="serial" connection-keep-alive="false" units="Millimeters" max-feed-rate="0" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="false" compress-gcode="false" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000" writer-polling-interval="100" writer-queue-timeout="60000" max-commands-queued="1000" confirmation-flow-control="false" reported-location-confirmation="true" interpolation-max-steps="32" interpolation-jerk-steps="4" interpolation-time-step="0.001" interpolation-min-step="16">
+         <driver class="org.openpnp.machine.reference.driver.GcodeAsyncDriver" id="DRV16cc74c729507d80" name="ConradHobbiesIndex" motion-control-type="ConstantAcceleration" communications="serial" connection-keep-alive="false" units="Millimeters" max-feed-rate="0" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="false" compress-gcode="false" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000" writer-polling-interval="100" writer-queue-timeout="60000" max-commands-queued="1000" confirmation-flow-control="false" reported-location-confirmation="true" interpolation-max-steps="32" interpolation-jerk-steps="4" interpolation-time-step="0.001" interpolation-min-step="16">
             <serial line-ending-type="LF" port-name="COM3" baud="115200" flow-control="RtsCts" data-bits="Eight" stop-bits="One" parity="None" set-dtr="false" set-rts="false" name="SerialPortCommunications"/>
             <tcp line-ending-type="LF" ip-address="127.0.0.1" port="23" name="TcpCommunications"/>
             <simulated line-ending-type="LF"/>
@@ -371,7 +401,7 @@
                <text><![CDATA[M42 P36 S{True:255}{False:0}]]></text>
             </command>
             <command head-mountable-id="ACT16cc7641eec16798" type="ACTUATE_BOOLEAN_COMMAND">
-               <text><![CDATA[M42 P42 S{True:255}{False:0}]]></text>
+               <text><![CDATA[M42 P36 S{True:0}{False:255}]]></text>
             </command>
             <command head-mountable-id="ACT16cc77f2058de0d0" type="ACTUATE_BOOLEAN_COMMAND">
                <text><![CDATA[M42 P44 S{True:255}{False:0}]]></text>
@@ -418,7 +448,30 @@
                <text><![CDATA[M42 P44 S{True:255}{False:0}]]></text>
             </command>
             <command head-mountable-id="ACT16cc857cb55c336c" type="ACTUATE_BOOLEAN_COMMAND">
-               <text><![CDATA[M150 R200 U B P{True:200}{False:0}]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I11]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I12]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I13]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I14]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I15]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I16]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I17]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I18]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I19]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I20]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I21]]></text>
+            </command>
+            <command head-mountable-id="ACT16ccd078c85dd09f" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I0]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I1]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I2]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I3]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I4]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I5]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I6]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I7]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I8]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I9]]></text>
+               <text><![CDATA[M150 R{True:200}{False:0} U{True:255}{False:0} B{True:255}{False:0} P I10]]></text>
             </command>
             <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
